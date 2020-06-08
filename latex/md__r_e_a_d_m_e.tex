@@ -1,0 +1,20 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md0}{}\doxysection{Hello World}\label{md__r_e_a_d_m_e_autotoc_md0}
+My first E\+S\+P32 program. This project uses the sample Hello World from esp-\/idf examples. \textbackslash{} Directory\+: $\sim$/esp/hello\+\_\+world \textbackslash{} To build and flash\+: idf.\+py build \&\& idf.\+py -\/p /dev/tty.S\+L\+A\+B\+\_\+\+U\+S\+Bto\+U\+A\+RT flash\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{Motivation}\label{md__r_e_a_d_m_e_autotoc_md1}
+Installing and setting up esp-\/idf environment for future development. Install \href{https://docs.espressif.com/projects/esp-idf/en/stable/get-started/}{\texttt{ esp-\/idf}} following espressif documentation.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{Tools}\label{md__r_e_a_d_m_e_autotoc_md2}
+mac\+OS Cataline Version 10.\+15.\+5 \textbackslash{} E\+S\+P-\/\+I\+DF v4.\+2-\/dev-\/1660-\/g7d7521367 \textbackslash{} E\+S\+P32 W\+R\+O\+OM\textbackslash{} Adafruit H\+U\+Z\+Z\+A\+H32 Feather\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{Problems and Solutions}\label{md__r_e_a_d_m_e_autotoc_md3}
+Mac couldn\textquotesingle{}t detect the port connecting to E\+S\+P32. Lacking drivers. \href{https://github.com/espressif/arduino-esp32/issues/1084}{\texttt{ Github discussion}}.\textbackslash{} Solution\+: Install \href{https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers}{\texttt{ C\+P210x V\+CP Driver}}.
+
+Mac couldn\textquotesingle{}t detect the port connecting to E\+S\+P32 even after installing the driver. Faulty Cable.\textbackslash{} Solution\+: Replace cable. I used a U\+SB Type C to Type A converter to a U\+SB Type A to Micro U\+SB.
+
+idf.\+py doesn\textquotesingle{}t work after closing terminal after setup. Solution\+: mac\+OS Catalina uses zsh terminal. \textbackslash{} Create .zshrc in $\sim$/ directory\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ touch \string~/.zhrc}
+\end{DoxyCode}
+
+
+Include these lines inside $\sim$/.zhrc\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export IDF\_PATH=\string~/esp/esp-\/idf}
+\DoxyCodeLine{export PATH="\$IDF\_PATH/tools:\$PATH"}
+\end{DoxyCode}
+ 
